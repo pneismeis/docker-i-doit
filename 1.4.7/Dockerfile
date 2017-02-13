@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:14.04
 
 COPY policy-rc.d /usr/sbin/policy-rc.d
 
