@@ -16,7 +16,7 @@ It is neither prepared nor tested for a production installation.
 % sudo docker run -p 8080:80 -t i-doit:1.8 
 ```
 
-Point your browser to `http://localhost:<port>/i-doit/` and complete the installation steps.
+Point your browser to `http://localhost:8080/i-doit/` and complete the installation steps.
 Just keep the default values suggested by i-doit and click **Next** until the installation is
 completed.
 
