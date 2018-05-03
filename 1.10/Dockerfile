@@ -1,5 +1,5 @@
 #
-# Builds a docker image for i-doit 1.8
+# Builds a docker image for i-doit 1.10.2
 #
 FROM ubuntu:16.04
 ENV idoit_home /var/www/i-doit
@@ -11,18 +11,20 @@ RUN apt-get update && apt-get dist-upgrade -y
 
 # install wget
 RUN apt-get update && apt-get install -y -q wget
+# install curl
+RUN apt-get update && apt-get install -y -q curl
 
-# install mysql 5.6
+# install mysql 5.7
 RUN apt-get update && apt-get install -y -q mysql-server-5.7
 
-# configure mysql 5.6 for i-doit 1.8
+# configure mysql 5.6 for i-doit 1.10.2
 COPY mysql-for-i-doit-1-8.cnf /etc/mysql/conf.d
 
 # install required packages
 RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y -q  \
 	apache2 \
-	libapache2-mod-php5 \
+	libapache2-mod-php5.6 \
 	curl \
 	php5.6 \
 	php5.6-cli \
