@@ -1,7 +1,7 @@
 all: build publish
 
 build:
-	sudo docker build -t gubaer/i-doit:1.8 .
+	sudo docker build -t pneismeis/i-doit:1.10 .
 
 publish:
-	sudo docker push gubaer/i-doit:1.8
+	sudo docker push pneismeis/i-doit:1.10
