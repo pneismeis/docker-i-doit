@@ -24,17 +24,17 @@ COPY mysql-for-i-doit-1-8.cnf /etc/mysql/conf.d
 RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y -q  \
 	apache2 \
-	libapache2-mod-php5.6 \
+	libapache2-mod-php \
 	curl \
-	php5.6 \
-	php5.6-cli \
-	php5.6-xmlrpc \
-	php5.6-ldap \
-	php5.6-gd \
-	php5.6-mysql \
-	php5.6-curl \
+	php \
+	php-cli \
+	php-xmlrpc \
+	php-ldap \
+	php-gd \
+	php-mysql \
+	php-curl \
 	mcrypt \
-	php5.6-mcrypt \
+	php-mcrypt \
 	unzip \
 	supervisor
 
