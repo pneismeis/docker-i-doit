@@ -48,7 +48,7 @@ RUN mkdir -p ${idoit_home}
 RUN sed -i \
 	-e "s#; max_input_vars = 1000#max_input_vars = 10000#" \
 	-e "s#post_max_size = 8M#post_max_size = 128M#" \
-	/etc/php5/apache2/php.ini
+	/etc/php7/apache2/php.ini
 
 # make sure apache module mod_rewrite is enabled
 RUN a2enmod rewrite
