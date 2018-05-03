@@ -19,25 +19,27 @@ RUN apt-get update && apt-get install -y -q mysql-server-5.6
 COPY mysql-for-i-doit-1-8.cnf /etc/mysql/conf.d
 
 # install required packages
+RUN add-apt-repository ppa:ondrej/php
+RUN apt-get update
 RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y -q  \
 	apache2 \
-	libapache2-mod-php5 \
+	libapache2-mod-php5.6 \
 	curl \
-	php5 \
-	php5-cli \
-	php5-xmlrpc \
-	php5-ldap \
-	php5-gd \
-	php5-mysql \
-	php5-curl \
+	php5.6 \
+	php5.6-cli \
+	php5.6-xmlrpc \
+	php5.6-ldap \
+	php5.6-gd \
+	php5.6-mysql \
+	php5.6-curl \
 	mcrypt \
-	php5-mcrypt \
+	php5.6-mcrypt \
 	unzip \
 	supervisor
 
 # enable mcrypt in php5
-RUN php5enmod mcrypt
+RUN phpenmod mcrypt
 
 # create the home directory for i-doit
 RUN mkdir -p ${idoit_home}
