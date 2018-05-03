@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y -q wget
 # install curl
 RUN apt-get update && apt-get install -y -q curl
 
-ENV MYSQL_PWD Pwd123
+ENV MYSQL_PWD 
 RUN echo "mysql-server mysql-server/root_password password $MYSQL_PWD" | debconf-set-selections
 RUN echo "mysql-server mysql-server/root_password_again password $MYSQL_PWD" | debconf-set-selections
 
