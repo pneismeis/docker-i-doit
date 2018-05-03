@@ -14,6 +14,10 @@ RUN apt-get update && apt-get install -y -q wget
 # install curl
 RUN apt-get update && apt-get install -y -q curl
 
+ENV MYSQL_PWD Pwd123
+RUN echo "mysql-server mysql-server/root_password password $MYSQL_PWD" | debconf-set-selections
+RUN echo "mysql-server mysql-server/root_password_again password $MYSQL_PWD" | debconf-set-selections
+
 # install mysql 5.7
 RUN apt-get update && apt-get install -y -q mysql-server
 #RUN apt-get update && apt-get install -y -q mariadb-server
