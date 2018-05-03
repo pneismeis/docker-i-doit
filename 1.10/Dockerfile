@@ -14,8 +14,8 @@ RUN apt-get update && apt-get install -y -q wget
 # install curl
 RUN apt-get update && apt-get install -y -q curl
 
-# install mysql 5.6
-RUN apt-get update && apt-get install -y -q mysql-server-5.6
+# install mysql 5.7
+RUN apt-get update && apt-get install -y -q mysql-server-5.7
 
 # configure mysql 5.6 for i-doit 1.10.2
 COPY mysql-for-i-doit-1-8.cnf /etc/mysql/conf.d
